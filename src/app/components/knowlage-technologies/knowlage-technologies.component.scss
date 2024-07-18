@@ -1,0 +1,5 @@
+li.highway-car {
+    animation: translateinfinite 25s linear infinite;
+}
+@keyframes translatestf { 0% { transform: translateX(100%); }100% { transform: translateX(-500%); }}
+@keyframes translateinfinite { 100% { transform: translateX(calc(-180px * 12)); }}

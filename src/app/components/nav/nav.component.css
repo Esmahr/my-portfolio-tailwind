@@ -68,16 +68,16 @@ input:checked+.slider:before {
 
 .flip {
   transition: transform 1s;
-  transform-style: preserve-3d; /* 3D dönüşüm efektleri için */
+  transform-style: preserve-3d;
 }
 
 .flip:hover {
-  transform: rotateY(360deg); /* Y ekseni etrafında 360 derece dönüş */
+  transform: rotateY(360deg);
 
 }
 
 a span{
   background: linear-gradient(172deg, rgba(255,254,127,1) 0%, rgba(241,35,255,1) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent; 
 }

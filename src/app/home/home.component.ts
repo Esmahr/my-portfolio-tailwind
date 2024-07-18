@@ -1,60 +1,39 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { DarkmodeService } from '../service/darkmode.service';
 
 @Component({
   selector: 'app-home',
-  template: `
-  <app-nav></app-nav>
-
-  <div class="landing select-none" [ngClass]="isDarkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'">
-      <div class="min-h-screen flex items-center justify-around">
-          <div class="landing-text">
-  
-              <h1 class="text-6xl font-bold leading-[3.7rem]">I'm a Frontend Developer</h1>
-              <p class="text-gray-500 font-extrathin">Lorem ipsum dolor sit amet sed aut eaque aperiam assumenda pariatur ut praesentium repellat veniam atque.
-                  Dolore saepe possimus temporibus vitae.</p>
-          </div>
-          <div class="landing-info flex">
-              <div class="landing-info-img" style="width: 80%;"><img class="float-right rounded-full w-[25rem]" src="../../assets/photo.jpg" alt=""></div>
-              <div class="landing-info-description">
-                  <ul>
-                      <li style="position: relative;
-                      left: -2rem;">
-                          <h2 class="text-5xl font-semibold">2+</h2>
-                          <p class="text-gray-500 font-extrathin text-sm">Yıl deneyim</p>
-                      </li>
-                      <li style="position: relative;
-                      left: 1rem;">
-                          <h2 class="text-5xl font-semibold">12+</h2>
-                          <p class="text-gray-500 font-extrathin text-sm">Tamamlanan proje</p>
-                      </li>
-                      <li style="position: relative;
-                      left: 1rem;">
-                          <h2 class="text-5xl font-semibold">364+</h2>
-                          <p class="text-gray-500 font-extrathin text-sm">Gönderilen commit</p>
-                      </li>
-                      <li  style="position: relative;
-                      left: -2rem;">
-                          <h2 class="text-5xl font-semibold">7+</h2>
-                          <p class="text-gray-500 font-extrathin text-sm">Bilinen teknoloji</p>
-                      </li>
-                  </ul>
-              </div>
-          </div>
-      </div>
-  </div>
-  
-  `,
+  templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
   isDarkMode = false;
+    isSticky: boolean | undefined;
 
-  constructor(private darkModeService: DarkmodeService) { }
+  constructor(private darkModeService: DarkmodeService) {}
 
   ngOnInit(): void {
     this.darkModeService.isDarkMode.subscribe((isDark) => {
       this.isDarkMode = isDark;
     });
   }
+
+  currentSlide = 0;
+  images1 = [
+    '../../assets/home-pr1/home.png',
+    '../../assets/home-pr1/kategori.png',
+    '../../assets/home-pr1/menu.png',
+    '../../assets/home-pr1/siparis.png',
+  ];
+
+  images2 = [
+    '../../assets/home-pr2/indir.png',
+    '../../assets/home-pr2/indir1.png',
+  ];
+
+  images3 = [
+    '../../assets/home-pr3/home (1).png',
+    '../../assets/home-pr3/home.png',
+    '../../assets/home-pr3/category.png',
+  ];
 }
