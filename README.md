@@ -1,1 +1,1 @@
-![home screenshot](src/assets/indir (1).png)
+![home screenshot](src/assets/ss.png)
